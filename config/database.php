@@ -3,9 +3,9 @@
 date_default_timezone_set('Asia/Jakarta');
 $host = getenv('DB_HOST') ?: '127.0.0.1';
 $port = getenv('DB_PORT') ?: '3306';
-$dbname = getenv('DB_NAME') ?: 'evoting';
-$username = getenv('DB_USER') ?: 'root';
-$password = getenv('DB_PASS') ?: 'moslem78';
+$dbname = getenv('DB_NAME') ?: '';
+$username = getenv('DB_USER') ?: '';
+$password = getenv('DB_PASS') ?: '';
 
 function createMysqlPdo(string $host, int $port, string $dbname, string $username, string $password): PDO {
     $pdo = new PDO("mysql:host={$host};port={$port};dbname={$dbname};charset=utf8mb4", $username, $password, [

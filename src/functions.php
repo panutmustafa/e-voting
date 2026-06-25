@@ -51,7 +51,7 @@ function verify_csrf(): void {
 
 function require_admin(): void {
     if (empty($_SESSION['user_id'])) {
-        $base = '/e-voting/index.php?page=login';
+        $base = '/index.php?page=login';
         header('Location: ' . $base);
         exit;
     }

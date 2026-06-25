@@ -32,9 +32,9 @@
           <p class="max-w-2xl text-lg <?php echo $theme === 'dark' ? 'text-slate-300' : 'text-slate-700'; ?>">Bersama membangun pendidikan yang berkualitas melalui sistem pemungutan suara digital, aman, kredibel, dan transparan.</p>
         </div>
         <div class="flex flex-wrap gap-4">
-          <a href="/e-voting/vote.php" class="rounded-full bg-amber-500 px-6 py-3 font-semibold text-slate-950">Mulai Voting</a>
+          <a href="/vote.php" class="rounded-full bg-amber-500 px-6 py-3 font-semibold text-slate-950">Mulai Voting</a>
           <a href="#candidates" class="rounded-full border <?php echo $theme === 'dark' ? 'border-slate-700 text-slate-100' : 'border-slate-300 text-slate-800'; ?> px-6 py-3">Lihat Kandidat</a>
-          <a href="/e-voting/index.php?page=voter-card" class="rounded-full border <?php echo $theme === 'dark' ? 'border-slate-700 text-slate-100' : 'border-slate-300 text-slate-800'; ?> px-6 py-3">Unduh Kartu Pemilih</a>
+          <a href="/index.php?page=voter-card" class="rounded-full border <?php echo $theme === 'dark' ? 'border-slate-700 text-slate-100' : 'border-slate-300 text-slate-800'; ?> px-6 py-3">Unduh Kartu Pemilih</a>
         </div>
         <div class="grid gap-4 sm:grid-cols-3">
           <div class="glass rounded-2xl p-5 <?php echo $theme === 'dark' ? 'glass-dark' : 'glass-light'; ?>">
@@ -69,12 +69,12 @@
     <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
       <?php foreach ($candidates as $candidate): ?>
         <article class="group overflow-hidden rounded-3xl border <?php echo $theme === 'dark' ? 'border-white/10 bg-slate-900/80' : 'border-slate-200 bg-white shadow-lg'; ?> shadow-xl">
-          <img src="/e-voting/<?php echo htmlspecialchars($candidate['photo'] ?: 'uploads/default.png'); ?>" alt="<?php echo htmlspecialchars($candidate['name']); ?>" class="h-64 w-full object-cover transition duration-500 group-hover:scale-105" onerror="this.src='/e-voting/uploads/default.png'; this.style.objectFit='contain'; this.style.padding='2rem'; this.style.background='#0f172a'">
+          <img src="/<?php echo htmlspecialchars($candidate['photo'] ?: 'uploads/default.png'); ?>" alt="<?php echo htmlspecialchars($candidate['name']); ?>" class="h-64 w-full object-cover transition duration-500 group-hover:scale-105" onerror="this.src='/uploads/default.png'; this.style.objectFit='contain'; this.style.padding='2rem'; this.style.background='#0f172a'">
           <div class="p-6">
             <p class="text-sm uppercase tracking-[0.25em] text-amber-500"><?php echo htmlspecialchars($candidate['position']); ?></p>
             <h4 class="mt-2 text-2xl font-semibold"><?php echo htmlspecialchars($candidate['name']); ?></h4>
             <p class="mt-4 text-sm <?php echo $theme === 'dark' ? 'text-slate-400' : 'text-slate-600'; ?>"><?php echo htmlspecialchars(substr($candidate['vision'], 0, 120)); ?>...</p>
-            <a href="/e-voting/index.php?page=candidate-profile&id=<?php echo (int)$candidate['id']; ?>" class="mt-6 inline-flex rounded-full bg-blue-600 px-4 py-2 text-sm font-medium">Lihat Profil Lengkap</a>
+            <a href="/index.php?page=candidate-profile&id=<?php echo (int)$candidate['id']; ?>" class="mt-6 inline-flex rounded-full bg-blue-600 px-4 py-2 text-sm font-medium">Lihat Profil Lengkap</a>
           </div>
         </article>
       <?php endforeach; ?>

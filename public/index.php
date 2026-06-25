@@ -14,7 +14,7 @@ if ($action === 'home') {
     include __DIR__ . '/../src/views/login.php';
 } elseif ($action === 'logout') {
     session_destroy();
-    header('Location: /e-voting/index.php?page=login');
+    header('Location: /index.php?page=login');
     exit;
 } elseif ($action === 'voter-card') {
     include __DIR__ . '/voter-card.php';

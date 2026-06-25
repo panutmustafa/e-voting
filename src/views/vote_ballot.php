@@ -14,10 +14,10 @@
     </div>
     <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
       <?php foreach ($candidates as $candidate): ?>
-        <form method="post" action="/e-voting/vote.php?action=submit" class="vote-form rounded-3xl border border-white/10 bg-slate-900/80 p-6 shadow-xl" data-candidate-name="<?php echo htmlspecialchars($candidate['name']); ?>" data-candidate-position="<?php echo htmlspecialchars($candidate['position']); ?>">
+        <form method="post" action="/vote.php?action=submit" class="vote-form rounded-3xl border border-white/10 bg-slate-900/80 p-6 shadow-xl" data-candidate-name="<?php echo htmlspecialchars($candidate['name']); ?>" data-candidate-position="<?php echo htmlspecialchars($candidate['position']); ?>">
           <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(csrf_token()); ?>">
           <input type="hidden" name="candidate_id" value="<?php echo (int)$candidate['id']; ?>">
-          <img src="/e-voting/<?php echo htmlspecialchars($candidate['photo'] ?: 'uploads/default.png'); ?>" class="h-48 w-full rounded-2xl object-cover" onerror="this.src='/e-voting/uploads/default.png'; this.style.objectFit='contain'; this.style.padding='2rem'; this.style.background='#0f172a'">
+          <img src="/<?php echo htmlspecialchars($candidate['photo'] ?: 'uploads/default.png'); ?>" class="h-48 w-full rounded-2xl object-cover" onerror="this.src='/uploads/default.png'; this.style.objectFit='contain'; this.style.padding='2rem'; this.style.background='#0f172a'">
           <h2 class="mt-4 text-xl font-semibold"><?php echo htmlspecialchars($candidate['name']); ?></h2>
           <p class="mt-2 text-sm text-slate-400"><?php echo htmlspecialchars($candidate['position']); ?></p>
           <p class="mt-4 text-sm text-slate-300"><?php echo htmlspecialchars(substr($candidate['vision'], 0, 120)); ?>...</p>

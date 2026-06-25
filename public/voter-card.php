@@ -97,7 +97,7 @@ $logo = $settings['school_logo'] ?? '';
     <!-- Header -->
     <div class="text-center">
       <?php if ($logo && file_exists(__DIR__ . '/../' . $logo)): ?>
-        <img src="/e-voting/<?php echo htmlspecialchars($logo); ?>" class="mx-auto h-16 w-16 rounded-2xl object-cover shadow-sm">
+        <img src="/<?php echo htmlspecialchars($logo); ?>" class="mx-auto h-16 w-16 rounded-2xl object-cover shadow-sm">
       <?php endif; ?>
       <h1 class="mt-4 text-3xl font-extrabold tracking-tight text-slate-900">Kartu Pemilih</h1>
       <p class="mt-1 text-sm text-slate-500">Cari nama Anda untuk mengunduh kartu pemilih</p>
@@ -150,7 +150,7 @@ $logo = $settings['school_logo'] ?? '';
       <div x-show="selected" x-cloak class="mt-10" x-transition>
       <div class="flex items-center justify-between">
         <h2 class="text-lg font-semibold text-slate-800">Kartu Pemilih Anda</h2>
-        <a :href="'/e-voting/index.php?page=voter-card&download=1&id=' + selected.id" class="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition-all hover:bg-blue-500">
+        <a :href="'/index.php?page=voter-card&download=1&id=' + selected.id" class="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition-all hover:bg-blue-500">
           <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
           Unduh PDF
         </a>
@@ -163,7 +163,7 @@ $logo = $settings['school_logo'] ?? '';
 
         <div class="flex items-center gap-3 pb-5 border-b border-slate-100">
           <?php if ($logo && file_exists(__DIR__ . '/../' . $logo)): ?>
-            <img src="/e-voting/<?php echo htmlspecialchars($logo); ?>" class="h-12 w-12 rounded-xl object-cover shrink-0">
+            <img src="/<?php echo htmlspecialchars($logo); ?>" class="h-12 w-12 rounded-xl object-cover shrink-0">
           <?php else: ?>
             <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 shrink-0">
               <svg class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
@@ -191,7 +191,7 @@ $logo = $settings['school_logo'] ?? '';
 
     <!-- Footer -->
     <p class="mt-12 text-center text-xs text-slate-400">
-      <a href="/e-voting/index.php" class="text-blue-600 hover:underline">&larr; Kembali ke Beranda</a>
+      <a href="/index.php" class="text-blue-600 hover:underline">&larr; Kembali ke Beranda</a>
     </p>
     </div>
   </div>

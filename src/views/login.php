@@ -24,7 +24,7 @@
   <div class="w-full max-w-md relative z-10">
     <!-- Back to Beranda Link at the top -->
     <div class="mb-4 flex justify-start">
-      <a href="/e-voting/index.php?page=home" class="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-slate-200 transition-colors group">
+      <a href="/index.php?page=home" class="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-slate-200 transition-colors group">
         <svg class="h-4 w-4 transform group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
         </svg>
@@ -57,7 +57,7 @@
         <?php unset($_SESSION['login_error']); ?>
       <?php endif; ?>
 
-      <form method="post" action="/e-voting/public/admin/login.php" class="space-y-5">
+      <form method="post" action="/public/admin/login.php" class="space-y-5">
         <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(csrf_token()); ?>">
         
         <div>

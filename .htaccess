@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /e-voting/
+RewriteBase /
 
 RewriteRule ^$ public/index.php [L]
 RewriteRule ^index\.php$ public/index.php [L]

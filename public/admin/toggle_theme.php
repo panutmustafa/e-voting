@@ -21,10 +21,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $current['id'],
     ]);
 
-    $referrer = $_SERVER['HTTP_REFERER'] ?? '/e-voting/public/admin/index.php';
+    $referrer = $_SERVER['HTTP_REFERER'] ?? '/public/admin/index.php';
     header('Location: ' . $referrer);
     exit;
 }
 
-header('Location: /e-voting/public/admin/index.php');
+header('Location: /public/admin/index.php');
 exit;
